@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:rgb(219, 19, 99)">
+        <form action="{{ url_for('predict')}}" method="POST">
+            <h2>Predictive analysis</h2>
+            <h3>Age</h3><input name="age" >
+            <h3>Gender</h3><br><select name="sex" required="required" type="number ">
+                <option value=1>1</option>
+                <option value=0>0</option>
+            </select>
+            <h3>Resting Blood Pressure</h3>
+            <input id="first" name="trestbps" type="number ">
+            <h3>Cholestrol</h3><input name="chol" required="required" type="number ">
+            <h3>Maximum heart rate achieved</h3><input name="thalach" required="required" type="number ">
+            <h3>resting electrocardiographic results (values 0,1,2)</h3><br><input name="restecg" required="required" type="number ">
+            <h3>Chest Pain</h3><br><select name="chest_pain" required="required" type="number ">
+                <option value=0>0</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+            </select>
+            <h3>Exercise induced angina</h3><br><select name="exang" required="required" type="number ">
+                <option value=0>0</option>
+                <option value=1>1</option>
+            </select>
+            <h3>Fasting blood sugar >120 mg/dl</h3><br><select name="fbs" required="required" type="number ">
+                <option value=0>0</option>
+                <option value=1>1</option>
+            </select>
+            <h3>ST depression induced by exercise relative to rest</h3><br><input name="oldpeak" required="required" type="number ">
+            <h3>The slope of the peak exercise ST segment</h3><br><select name="slope" required="required" type="number ">
+                <option value=0>0</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+            </select>
+            <h3>Thal</h3><br><select name="thal" required="required" type="number ">
+                <option value=0>0</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+            </select>
+            <h3>Number of major vessels (0-3) colored by flourosopy</h3><br><select name="ca" required="required" type="number ">
+                <option value=0>0</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Do I have Heart Disease?</button>
+            <br>
+
+            
+
+
+
+
+        </form>
+
+        
+        <br><br><h3>{{ prediction_text }}<h3></h3>
+        
+    </div>
+    
+    </body>
+</html>
